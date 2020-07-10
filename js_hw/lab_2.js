@@ -90,7 +90,7 @@ if (digits(splited_birth_month_day[0]) == true) {
 }
 
 // problem 3
-readline.question('Enter Integer\n>', (square_input) => {
+readline.question('Enter Integer\n>', square_input => {
 	var square_int = Number(square_input);
 	var temp1 = square_int - 1;
 	console.log(' ');
@@ -143,7 +143,7 @@ const readline = require('readline').createInterface({
 	output: process.stdout,
 });
 
-readline.question('Enter Inteager\n>', (int) => {
+readline.question('Enter Inteager\n>', int => {
 	for (i = 1; i <= 9; i++) {
 		let multiply = int * i;
 		console.log(int, '*', i, '=', multiply);
