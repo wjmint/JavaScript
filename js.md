@@ -35,9 +35,20 @@ a[name] = 'wj'
 
 ## Functions / keywords
 
+- ``function function_name()``
+
+  - ``a`` in function is called 'Function Scope'.
+
+  ``` js
+  function Add(a, b){
+      return a + b;
+  }
+  var x = 1, y = 2;
+  Add(x, y) // -> 3
+  ```
 - ``typeof``
 
-  - Same as python's type(a)
+  - it returns the type of variable.
 
   ```js
   typeof a
@@ -53,17 +64,7 @@ a[name] = 'wj'
   // result = 5
   ```
 
-- ``function function_name()``
 
-  - ``a`` in function is called 'Function Scope'.
-
-  ``` js
-  function Add(a, b){
-      return a + b;
-  }
-  var x = 1, y = 2;
-  Add(x, y) // -> 3
-  ```
 
 - ``this``
 
@@ -93,7 +94,17 @@ a[name] = 'wj'
   >now a is (user input).
   ```
 
-  
+- ``Number()``, ``String()``, ``parseInt()``, ``parseFloat()``
+
+  - These keywords will turn the variable into ``number``, ``string``, ``number``, ``string``.
+
+    ```js
+    var tt = '2'		  // String
+    tt = Number(tt) 	  // Number
+    tt = String(tt) 	  // String
+    tt = parseInt(tt)     // Number
+    tt = parseFloat(tt)   // Number
+    ```
 
 ## Operations
 
@@ -138,7 +149,7 @@ a[name] = 'wj'
    // result = 'yes'
    ```
 
-## Conditions
+## Conditions/Loops
 
    1. ``if``
 
