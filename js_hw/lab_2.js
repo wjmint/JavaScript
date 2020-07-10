@@ -159,7 +159,7 @@ for (i = 1; i <= 5; i++) {
 		factorial.push(int);
 		console.log(i + '! =', factorial[i - 1]);
 	} else {
-		let temp = Number(factorial[i - 1] * int);
+		let temp = Number(parseInt(factorial[i - 1]) * int);
 		factorial.push(Number(temp));
 		console.log(i + '! =', factorial[i - 1]);
 	}
