@@ -210,4 +210,35 @@ a[name] = 'wj'
      >i = 4
      ```
 
-     
+   - ``do ...while``
+   
+     - ``do..while`` will repeat the code block until the statement becomes false.
+   
+     - ``do..while``  will execute the code block once before inspecting. It checks the statement every time the code is fully executed.
+   
+       ```js
+       do {
+           i += 1;
+           console.log(i);
+       } while(i < 5);
+       ```
+   
+   - ``while``
+   
+     - ``while`` will execute the code block  __only if the statement is true.__
+   
+       ``` js	
+       let i = 0,
+           x = 0;
+       while (n < 3) {
+           n++;
+           x += n;
+           console.log(x)
+       }
+       // result:
+       // 1
+       // 3
+       // 6
+       ```
+   
+       
