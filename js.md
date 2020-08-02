@@ -8,6 +8,8 @@
 
 - To decline something in JavaScript, you should start with ``var``, and finish with ``;``.
 
+- ``this`` in object means the object's name.
+
 ```js
 // undefined
 var undefined1 = 'assigned but not used';
@@ -21,14 +23,27 @@ var a = "it\'s working'"
 // object
 var a = {
     key : 'value',
-    name = 'wj',
-    lastName = function(){
-        return this.key + this.name
-    }
+    name : 'wj',
+    getname : function(){
+        return this.name
+    };
 };
 // accesssing key value
 a.key = 'value'
 a[name] = 'wj'
+// array
+let arr = [
+    {
+        name : 'wjmint',
+        num : 123
+    },
+    {
+        name : 'js'
+    };
+];
+// accessing value
+arr[1].name = 'wjmint'
+
 ```
 
 
@@ -105,6 +120,20 @@ a[name] = 'wj'
     tt = parseInt(tt)     // Number
     tt = parseFloat(tt)   // Number
     ```
+
+- ``new``
+
+  - if you use ``new`` to new variable which you want to separate from the original one, it lets you contain the data in other space.
+
+  ```js
+  let obj = {
+      a : 'a'
+      b = 123
+  }
+  let a = Object.assign({}, obj)
+  ```
+
+  
 
 ## Operations
 
@@ -210,6 +239,17 @@ a[name] = 'wj'
      >i = 4
      ```
 
+     - you can use ``for`` like this;
+   
+       ```js
+     const arr = [1, 2, 3, 4, 5];
+       for (i of arr){
+         console.log(i)
+       }
+       ```
+       
+       s
+   
    - ``do ...while``
    
      - ``do..while`` will repeat the code block until the statement becomes false.

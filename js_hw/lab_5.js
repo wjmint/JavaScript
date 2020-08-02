@@ -204,3 +204,92 @@ readline.question('Input a character\n>', char => {
 	}
 	readline.close();
 });
+
+// problem 9
+let strike = 0,
+	ball = 0;
+function get_random_Number(min, max) {
+	return Math.floor(Math.random() * (max - min));
+}
+let answ1 = get_random_Number(0, 9),
+	answ2 = get_random_Number(0, 9),
+	answ3 = get_random_Number(0, 9);
+
+while (answ1 == answ2 || answ1 == answ3 || answ2 == answ3) {
+	(answ1 = get_random_Number(0, 9)), (answ2 = get_random_Number(0, 9)), (answ3 = get_random_Number(0, 9));
+}
+let bcounter = [answ1, answ2, answ3];
+readline.question('Input 3 integers(whitespace between)\n>', int3 => {
+	let strint = String(int3);
+	let strarr = strint.split(' ');
+	let guess1 = strarr[0],
+		guess2 = strarr[1],
+		guess3 = strarr[2];
+	if (guess1 in bcounter) {
+		if (guess1 == answ1) {
+			strike++;
+		} else {
+			ball++;
+		}
+	} else if (guess2 in bcounter) {
+		if (guess2 == answ2) {
+			strike++;
+		} else {
+			ball++;
+		}
+	} else if (guess3 in bcounter) {
+		if (guess3 == answ3) {
+			strike++;
+		} else {
+			ball++;
+		}
+	}
+	console.log(`${strike}S ${ball}B`);
+	readline.close();
+});
+
+// problem 10
+readline.question('Input an equation that uses - or + operator\n>', equation => {
+	let parts_of_equation = equation.split(' ');
+	let firstNum = parseInt(parts_of_equation[0]);
+	let secondNum = parseInt(parts_of_equation[2]);
+	let operator = String(parts_of_equation[1]);
+
+	let result = 0;
+	if (operator == '+') {
+		result = firstNum + secondNum;
+		console.log(`${equation} = ${result}`);
+	} else if (operator == '-') {
+		result = firstNum - secondNum;
+		console.log(`${equation} = ${result}`);
+	} else {
+		console.log('Wrong Operator');
+	}
+	readline.close();
+});
+
+// problem 11
+let won500 = 0,
+	won100 = 0;
+readline.question(
+	'1. Americano(W500) 2. Caffe Latte(W400) 3. Lemon Tea(W300)\nselect your beverage by number, and input money(multiple of 100)\n>',
+	bending_machine => {
+		let arr_bending_machine = bending_machine.split(' ');
+		let beverage = parseInt(arr_bending_machine[0]),
+			money_input = arr_bending_machine[1];
+		switch (beverage) {
+			case 1:
+				console.log('Americano');
+				break;
+			case 2:
+				console.log('Caffe Latte');
+				break;
+			case 3:
+				console.log('Lemon Tea');
+				break;
+			default:
+				console.log(`beverage ${beverage} is not on menu.`);
+		}
+		readline.close();
+	}
+);
