@@ -1,4 +1,5 @@
 const {read} = require('fs');
+const {dirname} = require('path');
 
 const readline = require('readline').createInterface({
 	input: process.stdin,
@@ -271,6 +272,28 @@ readline.question('Input an equation that uses - or + operator\n>', equation => 
 // problem 11
 let won500 = 0,
 	won100 = 0;
+function change_counter(drink, money, 一百, 五百) {
+	switch (drink) {
+		case 1:
+			temp = money - 500;
+			break;
+		case 2:
+			temp = money - 400;
+			break;
+		case 3:
+			temp = money - 300;
+			break;
+		default:
+			break;
+	}
+	temp = money - 500;
+	if (temp >= 500) {
+		五百 = temp / 500;
+		一百 = (temp % 500) / 100;
+	} else {
+		一百 = temp / 100;
+	}
+}
 readline.question(
 	'1. Americano(W500) 2. Caffe Latte(W400) 3. Lemon Tea(W300)\nselect your beverage by number, and input money(multiple of 100)\n>',
 	bending_machine => {
