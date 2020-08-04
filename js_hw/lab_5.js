@@ -272,7 +272,7 @@ readline.question('Input an equation that uses - or + operator\n>', equation => 
 // problem 11
 let won500 = 0,
 	won100 = 0;
-function change_counter(drink, money, 一百, 五百) {
+function change_counter(drink, money) {
 	switch (drink) {
 		case 1:
 			temp = money - 500;
@@ -283,15 +283,13 @@ function change_counter(drink, money, 一百, 五百) {
 		case 3:
 			temp = money - 300;
 			break;
-		default:
-			break;
 	}
 	temp = money - 500;
 	if (temp >= 500) {
-		五百 = temp / 500;
-		一百 = (temp % 500) / 100;
+		won500 = temp / 500;
+		won100 = (temp % 500) / 100;
 	} else {
-		一百 = temp / 100;
+		won100 = temp / 100;
 	}
 }
 readline.question(
@@ -299,16 +297,22 @@ readline.question(
 	bending_machine => {
 		let arr_bending_machine = bending_machine.split(' ');
 		let beverage = parseInt(arr_bending_machine[0]),
-			money_input = arr_bending_machine[1];
+			money_input = parseInt(arr_bending_machine[1]);
 		switch (beverage) {
 			case 1:
 				console.log('Americano');
+				change_counter(beverage, money_input, won100, won500);
+				console.log(`${won100} ${won500}`);
 				break;
 			case 2:
 				console.log('Caffe Latte');
+				change_counter(beverage, money_input, won100, won500);
+				console.log(`${won100} ${won500}`);
 				break;
 			case 3:
 				console.log('Lemon Tea');
+				change_counter(beverage, money_input, won100, won500);
+				console.log(`${won100} ${won500}`);
 				break;
 			default:
 				console.log(`beverage ${beverage} is not on menu.`);
