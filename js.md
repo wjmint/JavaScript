@@ -61,6 +61,49 @@ arr[1].name = 'wjmint'
   var x = 1, y = 2;
   Add(x, y) // -> 3
   ```
+
+  ### Types of functions
+
+  1. normal functions
+
+  2. anonymous functions
+
+     ``` js
+     const result = function(a, b){
+         return a + b
+     }
+     
+     result(a, b) // you execute the anonymous function just like normal function.
+     ```
+
+  3. arrow functions(anonymous functions)
+
+     ``` js
+     const result = (a, b) => {
+         return a + b
+     }
+     ```
+
+  4. IIFE(Immediately Invoked Function Expression)
+
+      ``` js
+     const result = ((a, b) => {
+         return a + b
+     })
+     
+     console.log(result)
+      ```
+
+  5. currying functions
+
+     
+
+  6. pure functions
+
+  7. currying and partial application
+
+  8. compositional functions
+
 - ``typeof``
 
   - it returns the type of variable.
